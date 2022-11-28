@@ -28,10 +28,12 @@
             >Web<span class="logo-studio">Studio</span></a
           >
           <ul class="header__nav-list">
-            <li><a class="header__nav-item" href="./index.html">Студія</a></li>
             <li class="header__nav-current">
-              <a class="header__nav-item current" href="./portfolio.html">Портфоліо</a>
+              <div class="header__nav-line">
+                <a class="header__nav-item current" href="./index.html">Студія</a>
+              </div>
             </li>
+            <li><a class="header__nav-item" href="./portfolio.html">Портфоліо</a></li>
             <li><a class="header__nav-item" href="">Контакти</a></li>
           </ul>
         </nav>
@@ -39,20 +41,53 @@
           <li>
             <a class="header__contacts-email" href="mailto:info@devstudio.com">
               <svg class="header__email-icon" width="16" height="12">
-                <use href="./images/icons.svg#icon-smartphone"></use>
+                <use href="./images/icons.svg#icon-letter"></use>
               </svg>
               info@devstudio.com</a
             >
           </li>
           <li>
             <a class="header__contacts-phone" href="tel:+380961111111">
-              <svg class="header__phone-icon" width="16" height="12">
-                <use href="./images/icons.svg#icon-email"></use>
+              <svg class="header__phone-icon" width="10" height="16">
+                <use href="./images/icons.svg#icon-phone"></use>
               </svg>
               +38 096 111 11 11</a
             >
           </li>
         </ul>
+        <button class="header__menu-button" type="button" data-menu-open>
+          <svg class="header__menu-icon" width="40" height="40">
+            <use href="./images/icons.svg#icon-menu"></use>
+          </svg>
+        </button>
+      </div>
+      <div class="menu is-hidden" data-menu>
+        <div class="menu__container">
+          <button class="menu__close-btn" type="button" data-menu-close>
+            <svg class="menu__close-icon" width="40" height="40">
+              <use href="./images/icons.svg#icon-menu-close"></use>
+            </svg>
+          </button>
+          <ul class="menu__list">
+            <li class="menu__current">
+              <a class="menu__item current" href="./index.html">Студія</a>
+            </li>
+            <li><a class="menu__item" href="./portfolio.html">Портфоліо</a></li>
+            <li><a class="menu__item" href="">Контакти</a></li>
+          </ul>
+          <div class="menu__swap">
+            <ul class="menu__contacts">
+              <li class="menu__phone"><a href="">+38 096 111 11 11</a></li>
+              <li class="menu__email"><a href="">info@devstudio.com</a></li>
+            </ul>
+            <ul class="menu__socials">
+              <li class="menu__socials-item">Instagram</li>
+              <li class="menu__socials-item">Twitter</li>
+              <li class="menu__socials-item">Facebook</li>
+              <li class="menu__socials-item">LinkedIn</li>
+            </ul>
+          </div>
+        </div>
       </div>
     </header>
     <main>
@@ -70,7 +105,29 @@
             <li class="works__list-item">
               <a class="works__example link" href="">
                 <div class="works__img-container">
-                  <img class="works__img" src="./images/techno.jpg" alt="Ноутбук" width="370" />
+                  <picture>
+                    <source
+                      class="works__img"
+                      srcset="./images/techno-desk-1x.jpg 1x, ./images/techno-desk-2x.jpg 2x"
+                      media="(min-width: 1200px)"
+                    />
+                    <source
+                      class="works__img"
+                      srcset="./images/techno-tab-1x.jpg 1x, ./images/techno-tab-2x.jpg 2x"
+                      media="(min-width: 768px)"
+                    />
+                    <source
+                      class="works__img"
+                      srcset="./images/techno-mob-1x.jpg 1x, ./images/techno-mob-2x.jpg 2x"
+                      media="(max-width: 767px)"
+                    />
+                    <img
+                      class="works__img"
+                      src="./images/techno-mob-1x.jpg"
+                      alt="Мобільний телефон"
+                      width="370"
+                    />
+                  </picture>
                   <p class="works__modal">
                     Ресурс пропонує комплексні пропозиції з різним рівнем функціоналу та сервісів.
                     Все це дозволить відвідувачу отримати вичерпні відомості про компанію чи
@@ -85,12 +142,29 @@
             </li>
             <li class="works__list-item">
               <a class="works__example link" href="">
-                <img
-                  class="works__img"
-                  src="./images/poster.jpg"
-                  alt="Постер з двома футболістами"
-                  width="370"
-                />
+                <picture>
+                  <source
+                    class="works__img"
+                    srcset="./images/poster-desk-1x.jpg 1x, ./images/poster-desk-2x.jpg 2x"
+                    media="(min-width: 1200px)"
+                  />
+                  <source
+                    class="works__img"
+                    srcset="./images/poster-tab-1x.jpg 1x, ./images/poster-tab-2x.jpg 2x"
+                    media="(min-width: 768px)"
+                  />
+                  <source
+                    class="works__img"
+                    srcset="./images/poster-mob-1x.jpg 1x, ./images/poster-mob-2x.jpg 2x"
+                    media="(max-width: 767px)"
+                  />
+                  <img
+                    class="works__img"
+                    src="./images/poster-mob-1x.jpg"
+                    alt="Мобільний телефон"
+                    width="370"
+                  />
+                </picture>
                 <div class="works__description">
                   <h2 class="works__title">
                     Постер <span lang="en">New Orlean vs Golden Star</span>
@@ -101,12 +175,29 @@
             </li>
             <li class="works__list-item">
               <a class="works__example link" href="">
-                <img
-                  class="works__img"
-                  src="./images/restaurant.jpg"
-                  alt="Логотип ресторана морської їжі"
-                  width="370"
-                />
+                <picture>
+                  <source
+                    class="works__img"
+                    srcset="./images/seafood-desk-1x.jpg 1x, ./images/seafood-desk-2x.jpg 2x"
+                    media="(min-width: 1200px)"
+                  />
+                  <source
+                    class="works__img"
+                    srcset="./images/seafood-tab-1x.jpg 1x, ./images/seafood-tab-2x.jpg 2x"
+                    media="(min-width: 768px)"
+                  />
+                  <source
+                    class="works__img"
+                    srcset="./images/seafood-mob-1x.jpg 1x, ./images/seafood-mob-2x.jpg 2x"
+                    media="(max-width: 767px)"
+                  />
+                  <img
+                    class="works__img"
+                    src="./images/seafood-mob-1x.jpg"
+                    alt="Мобільний телефон"
+                    width="370"
+                  />
+                </picture>
                 <div class="works__description">
                   <h2 class="works__title">Ресторан <span lang="en">Seafood</span></h2>
                   <p class="works__paragraph">Додаток</p>
@@ -115,7 +206,29 @@
             </li>
             <li class="works__list-item">
               <a class="works__example link" href="">
-                <img class="works__img" src="./images/prime.jpg" alt="Гарнітура" width="370" />
+                <picture>
+                  <source
+                    class="works__img"
+                    srcset="./images/prime-desk-1x.jpg 1x, ./images/prime-desk-2x.jpg 2x"
+                    media="(min-width: 1200px)"
+                  />
+                  <source
+                    class="works__img"
+                    srcset="./images/prime-tab-1x.jpg 1x, ./images/prime-tab-2x.jpg 2x"
+                    media="(min-width: 768px)"
+                  />
+                  <source
+                    class="works__img"
+                    srcset="./images/prime-mob-1x.jpg 1x, ./images/prime-mob-2x.jpg 2x"
+                    media="(max-width: 767px)"
+                  />
+                  <img
+                    class="works__img"
+                    src="./images/prime-mob-1x.jpg"
+                    alt="Мобільний телефон"
+                    width="370"
+                  />
+                </picture>
                 <div class="works__description">
                   <h2 class="works__title">Проєкт <span lang="en">Prime</span></h2>
                   <p class="works__paragraph">Маркетинг</p>
@@ -124,7 +237,29 @@
             </li>
             <li class="works__list-item">
               <a class="works__example link" href="">
-                <img class="works__img" src="./images/boxes.jpg" alt="Дві коробочки" width="370" />
+                <picture>
+                  <source
+                    class="works__img"
+                    srcset="./images/boxes-desk-1x.jpg 1x, ./images/boxes-desk-2x.jpg 2x"
+                    media="(min-width: 1200px)"
+                  />
+                  <source
+                    class="works__img"
+                    srcset="./images/boxes-tab-1x.jpg 1x, ./images/boxes-tab-2x.jpg 2x"
+                    media="(min-width: 768px)"
+                  />
+                  <source
+                    class="works__img"
+                    srcset="./images/boxes-mob-1x.jpg 1x, ./images/boxes-mob-2x.jpg 2x"
+                    media="(max-width: 767px)"
+                  />
+                  <img
+                    class="works__img"
+                    src="./images/boxes-mob-1x.jpg"
+                    alt="Мобільний телефон"
+                    width="370"
+                  />
+                </picture>
                 <div class="works__description">
                   <h2 class="works__title">Проєкт <span lang="en">Boxes</span></h2>
                   <p class="works__paragraph">Додаток</p>
@@ -133,7 +268,32 @@
             </li>
             <li class="works__list-item">
               <a class="works__example link" href="">
-                <img class="works__img" src="./images/monoblock.jpg" alt="Моноблок" width="370" />
+                <picture>
+                  <source
+                    class="works__img"
+                    srcset="
+                      ./images/inspiration-desk-1x.jpg 1x,
+                      ./images/inspiration-desk-2x.jpg 2x
+                    "
+                    media="(min-width: 1200px)"
+                  />
+                  <source
+                    class="works__img"
+                    srcset="./images/inspiration-tab-1x.jpg 1x, ./images/inspiration-tab-2x.jpg 2x"
+                    media="(min-width: 768px)"
+                  />
+                  <source
+                    class="works__img"
+                    srcset="./images/inspiration-mob-1x.jpg 1x, ./images/inspiration-mob-2x.jpg 2x"
+                    media="(max-width: 767px)"
+                  />
+                  <img
+                    class="works__img"
+                    src="./images/inspiration-mob-1x.jpg"
+                    alt="Мобільний телефон"
+                    width="370"
+                  />
+                </picture>
                 <div class="works__description">
                   <h2 class="works__title" lang="en">Inspiration has no Borders</h2>
                   <p class="works__paragraph">Веб-сайт</p>
@@ -142,7 +302,38 @@
             </li>
             <li class="works__list-item">
               <a class="works__example link" href="">
-                <img class="works__img" src="./images/book.jpg" alt="Відкрита книга" width="370" />
+                <picture>
+                  <source
+                    class="works__img"
+                    srcset="
+                      ./images/limited-edition-desk-1x.jpg 1x,
+                      ./images/limited-edition-desk-2x.jpg 2x
+                    "
+                    media="(min-width: 1200px)"
+                  />
+                  <source
+                    class="works__img"
+                    srcset="
+                      ./images/limited-edition-tab-1x.jpg 1x,
+                      ./images/limited-edition-tab-2x.jpg 2x
+                    "
+                    media="(min-width: 768px)"
+                  />
+                  <source
+                    class="works__img"
+                    srcset="
+                      ./images/limited-edition-mob-1x.jpg 1x,
+                      ./images/limited-edition-mob-2x.jpg 2x
+                    "
+                    media="(max-width: 767px)"
+                  />
+                  <img
+                    class="works__img"
+                    src="./images/limited-edition-mob-1x.jpg"
+                    alt="Мобільний телефон"
+                    width="370"
+                  />
+                </picture>
                 <div class="works__description">
                   <h2 class="works__title">Видання <span lang="en">Limited Edition</span></h2>
                   <p class="works__paragraph">Дизайн</p>
@@ -151,7 +342,29 @@
             </li>
             <li class="works__list-item">
               <a class="works__example link" href="">
-                <img class="works__img" src="./images/label.jpg" alt="Бирка" width="370" />
+                <picture>
+                  <source
+                    class="works__img"
+                    srcset="./images/lab-desk-1x.jpg 1x, ./images/lab-desk-2x.jpg 2x"
+                    media="(min-width: 1200px)"
+                  />
+                  <source
+                    class="works__img"
+                    srcset="./images/lab-tab-1x.jpg 1x, ./images/lab-tab-2x.jpg 2x"
+                    media="(min-width: 768px)"
+                  />
+                  <source
+                    class="works__img"
+                    srcset="./images/lab-mob-1x.jpg 1x, ./images/lab-mob-2x.jpg 2x"
+                    media="(max-width: 767px)"
+                  />
+                  <img
+                    class="works__img"
+                    src="./images/lab-mob-1x.jpg"
+                    alt="Мобільний телефон"
+                    width="370"
+                  />
+                </picture>
                 <div class="works__description">
                   <h2 class="works__title">Проєкт <span lang="en">LAB</span></h2>
                   <p class="works__paragraph">Маркетинг</p>
@@ -160,12 +373,38 @@
             </li>
             <li class="works__list-item">
               <a class="works__example link" href="">
-                <img
-                  class="works__img"
-                  src="./images/notebook.jpg"
-                  alt="Ноутбук за яким працює людина"
-                  width="370"
-                />
+                <picture>
+                  <source
+                    class="works__img"
+                    srcset="
+                      ./images/growing-business-desk-1x.jpg 1x,
+                      ./images/growing-business-desk-2x.jpg 2x
+                    "
+                    media="(min-width: 1200px)"
+                  />
+                  <source
+                    class="works__img"
+                    srcset="
+                      ./images/growing-business-tab-1x.jpg 1x,
+                      ./images/growing-business-tab-2x.jpg 2x
+                    "
+                    media="(min-width: 768px)"
+                  />
+                  <source
+                    class="works__img"
+                    srcset="
+                      ./images/growing-business-mob-1x.jpg 1x,
+                      ./images/growing-business-mob-2x.jpg 2x
+                    "
+                    media="(max-width: 767px)"
+                  />
+                  <img
+                    class="works__img"
+                    src="./images/growing-business-mob-1x.jpg"
+                    alt="Мобільний телефон"
+                    width="370"
+                  />
+                </picture>
                 <div class="works__description">
                   <h2 class="works__title" lang="en">Growing Business</h2>
                   <p class="works__paragraph">Додаток</p>
@@ -184,19 +423,19 @@
           >
           <address>
             <ul class="footer__contacts">
-              <li class="footer__contacts-adress"><p>м. Київ, пр-т Лесі Українки, 26</p></li>
+              <li class="footer__contacts-adress">м. Київ, пр-т Лесі Українки, 26</li>
               <li class="footer__contacts-item">
-                <a class="footer__link link" href="mailto:info@devstudio.com">info@devstudio.com</a>
+                <a class="footer__link" href="mailto:info@devstudio.com">info@devstudio.com</a>
               </li>
               <li class="footer__contacts-item">
-                <a class="footer__link link" href="tel:+380961111111">+38 096 111 11 11</a>
+                <a class="footer__link" href="tel:+380961111111">+38 096 111 11 11</a>
               </li>
             </ul>
           </address>
         </div>
         <div class="footer__join-us">
           <p class="footer__paragraph">Приєднуйтесь</p>
-          <ul class="footer__socials list">
+          <ul class="footer__socials">
             <li>
               <a class="socials-container" href="" aria-label="Інстаграм">
                 <svg class="socials-icon" width="20" height="20">
@@ -227,25 +466,25 @@
             </li>
           </ul>
         </div>
-        <form class="footer__subscription">
-          <label class="footer__subscription-label" for="subscription-email">
-            <span class="footer__subscription-title">Підпишіться на розсилку</span>
-            <span class="footer__subscription-container">
-              <input
-                class="footer__subscription-input"
-                type="email"
-                name="subscription-email"
-                id="email"
-                placeholder="E-mail"
-              />
-              <button class="footer__subscription-btn button" type="submit">
-                Підписатися
-                <svg class="footer__subscription-btn-icon" width="24" height="24">
-                  <use href="./images/icons.svg#icon-send"></use>
-                </svg>
-              </button>
-            </span>
-          </label>
+        <form class="subscription">
+          <label class="subscription__label" for="subscription-email"
+            >Підпишіться на розсилку</label
+          >
+          <span class="subscription__container">
+            <input
+              class="subscription__input"
+              type="email"
+              name="subscription-email"
+              id="email"
+              placeholder="E-mail"
+            />
+            <button class="subscription__btn button" type="submit">
+              Підписатися
+              <svg class="subscription__btn-icon" width="24" height="24">
+                <use href="./images/icons.svg#icon-send"></use>
+              </svg>
+            </button>
+          </span>
         </form>
       </div>
     </footer>
