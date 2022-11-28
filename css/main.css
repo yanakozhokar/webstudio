@@ -284,6 +284,7 @@ body {
   left: 0;
   width: 100vw;
   height: 100vh;
+  z-index: 1;
   background-color: #ffffff;
 }
 .menu.is-hidden {
@@ -983,8 +984,14 @@ body {
 
 .works__filter {
   display: flex;
+  flex-wrap: wrap;
   gap: 8px;
-  justify-content: center;
+  justify-content: flex-start;
+}
+@media screen and (min-width: 780px) {
+  .works__filter {
+    justify-content: center;
+  }
 }
 
 .works__filter-button {
@@ -1010,15 +1017,14 @@ body {
 }
 
 .works__list {
-  margin-top: 50px;
   display: flex;
   flex-wrap: wrap;
   gap: 30px;
-  justify-content: center;
+  margin-top: 50px;
 }
 
 .works__list-item {
-  width: 370px;
+  max-width: 450px;
   background: #ffffff;
   transition-property: box-shadow;
   transition-duration: 250ms;
@@ -1026,6 +1032,47 @@ body {
 }
 .works__list-item:hover, .works__list-item:focus {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+@media screen and (min-width: 320px) {
+  .works__list-item {
+    width: 450px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .works__list-item {
+    width: 354px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .works__list-item {
+    width: 370px;
+  }
+}
+
+.works__example {
+  display: block;
+}
+
+.works__img-container {
+  position: relative;
+  overflow: hidden;
+  max-width: 450px;
+  max-height: 294px;
+}
+@media screen and (min-width: 768px) {
+  .works__img-container {
+    max-width: 354px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .works__img-container {
+    max-width: 370px;
+  }
+}
+
+.works__img {
+  display: block;
+  width: 100%;
 }
 
 .works__modal {
@@ -1049,15 +1096,6 @@ body {
 }
 .works__list-item:hover .works__modal {
   transform: translateY(0);
-}
-
-.works__img-container {
-  position: relative;
-  overflow: hidden;
-}
-
-.works__img {
-  display: block;
 }
 
 .works__description {
