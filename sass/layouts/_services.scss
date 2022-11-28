@@ -1,0 +1,49 @@
+.services {
+  display: none;
+  @media screen and (min-width: 1200px) {
+    display: block;
+  }
+}
+
+.services.section {
+  padding-top: 0;
+}
+
+.services__title {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.16;
+  text-align: center;
+  color: $title-color;
+}
+
+.services__list {
+  display: flex;
+  gap: 30px;
+  margin-top: 50px;
+}
+
+.services__item {
+  position: relative;
+}
+
+.services__img {
+  width: 370px;
+  height: 274px;
+}
+
+.services__description {
+  padding-top: 27px;
+  padding-bottom: 27px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  text-align: center;
+  text-transform: uppercase;
+  color: $secondary-text-color;
+  background: rgba(47, 48, 58, 0.8);
+}
